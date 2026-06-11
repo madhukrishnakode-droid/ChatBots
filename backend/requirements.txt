@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+sqlalchemy
+mysql-connector-python
+python-dotenv
+google-generativeai
+spacy
+pytesseract
+pdf2image
+pillow
+pdfplumber
+python-docx
+requests

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analyzer & Job Matching Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar with Resume Info -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>📋 Resume Analysis</h2>
+            </div>
+            <div id="resume-info" class="resume-info">
+                <div class="resume-stat">
+                    <div class="resume-stat-label">Total Skills</div>
+                    <div class="resume-stat-value">5</div>
+                </div>
+                
+                <div class="resume-stat">
+                    <div class="resume-stat-label">Experience</div>
+                    <div class="resume-stat-value">0 yrs</div>
+                </div>
+                
+                <div class="resume-stat">
+                    <div class="resume-stat-label">Projects</div>
+                    <div class="resume-stat-value">0</div>
+                </div>
+                
+                <div class="resume-skills">
+                    <h4>🛠️ Top Skills</h4>
+                    <span class="skill-tag">git</span><span class="skill-tag">github</span><span class="skill-tag">python</span><span class="skill-tag">java</span><span class="skill-tag">leadership</span>
+                </div>
+            </div>
+            <div class="upload-section">
+                <input type="file" id="resume-file" accept=".pdf,.docx,.txt,.jpg,.jpeg,.png">
+                <button id="upload-btn" class="btn-primary">Upload Resume</button>
+                <small>Supports: PDF, DOCX, TXT, JPG, PNG</small>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="main-area">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <h1>🤖 Career Advisor Chatbot</h1>
+                <p>Your AI-powered job search assistant</p>
+            </div>
+
+            <!-- Chat Container -->
+            <div id="chat-container" class="chat-container">
+                <div class="welcome-message">
+                    <h2>Welcome! 👋</h2>
+                    <p>Upload your resume to begin your job search journey.</p>
+                    <p>I'll analyze your skills and find the best job matches for you.</p>
+                </div>
+                <div class="message bot">
+                    <div class="message-content">Hi Job Seeker! 🚀 Your resume looks strong with 0+ years of experience. Let's discover roles that align with your skills.</div>
+                    <div class="message-time">04:18 pm</div>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input-area">
+                <input 
+                    type="text" 
+                    id="chat-input" 
+                    placeholder="Ask me anything about your job prospects..." 
+                >
+                <button id="send-btn" class="btn-send">Send</button>
+            </div>
+        </div>
+
+        <!-- Jobs Sidebar -->
+        <div class="jobs-sidebar">
+            <div class="jobs-header">
+                <h2>💼 Job Matches</h2>
+                <button id="search-jobs-btn" class="btn-secondary">Search Jobs</button>
+            </div>
+            <div id="jobs-container" class="jobs-container">
+                <p class="placeholder">No jobs loaded yet</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Job Detail Modal -->
+    <div id="job-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="spinner hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,601 @@
+/* ==================== General Styles ==================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 280px 1fr 320px;
+    gap: 20px;
+    height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* ==================== Sidebar Styles ==================== */
+
+.sidebar, .jobs-sidebar {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.sidebar {
+    background: linear-gradient(180deg, #f8f9fa 0%, #fff 100%);
+}
+
+.sidebar-header, .jobs-header {
+    padding: 20px;
+    border-bottom: 2px solid #e9ecef;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.sidebar-header h2, .jobs-header h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* ==================== Resume Info Section ==================== */
+
+.resume-info {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.resume-info p.placeholder,
+.jobs-container p.placeholder {
+    color: #999;
+    text-align: center;
+    padding: 30px 10px;
+    font-style: italic;
+}
+
+.resume-stat {
+    background: #f8f9fa;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.resume-stat-label {
+    font-size: 12px;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.resume-stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #667eea;
+    margin-top: 5px;
+}
+
+.resume-skills {
+    margin-top: 20px;
+}
+
+.resume-skills h4 {
+    margin-bottom: 10px;
+    color: #667eea;
+    font-size: 14px;
+}
+
+.skill-tag {
+    display: inline-block;
+    background: #e7e5ff;
+    color: #667eea;
+    padding: 5px 12px;
+    margin: 5px 5px 5px 0;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* ==================== Upload Section ==================== */
+
+.upload-section {
+    padding: 20px;
+    border-top: 2px solid #e9ecef;
+    background: #f8f9fa;
+}
+
+.upload-section input[type="file"] {
+    display: none;
+}
+
+.upload-section button {
+    width: 100%;
+}
+
+.upload-section small {
+    display: block;
+    margin-top: 10px;
+    color: #999;
+    text-align: center;
+    font-size: 11px;
+}
+
+/* ==================== Main Chat Area ==================== */
+
+.main-area {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.chat-header {
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.chat-header h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.chat-header p {
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+/* ==================== Chat Container ==================== */
+
+.chat-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background: #fafbfc;
+}
+
+.chat-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 4px;
+}
+
+.chat-container::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+.welcome-message {
+    text-align: center;
+    padding: 40px 20px;
+    color: #999;
+}
+
+.welcome-message h2 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.welcome-message p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.message {
+    margin: 15px 0;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message.bot {
+    text-align: left;
+}
+
+.message.user {
+    text-align: right;
+}
+
+.message-content {
+    display: inline-block;
+    max-width: 70%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+.message.bot .message-content {
+    background: #e7e5ff;
+    color: #333;
+    border-bottom-left-radius: 4px;
+}
+
+.message.user .message-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.message-time {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+}
+
+/* ==================== Chat Input ==================== */
+
+.chat-input-area {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    background: white;
+    border-top: 1px solid #e9ecef;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+#chat-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+#chat-input:disabled {
+    background: #f8f9fa;
+    color: #999;
+}
+
+/* ==================== Jobs Sidebar ==================== */
+
+.jobs-sidebar {
+    background: linear-gradient(180deg, #f8f9fa 0%, #fff 100%);
+}
+
+.jobs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.jobs-header h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.jobs-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.job-card {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 4px solid #667eea;
+}
+
+.job-card:hover {
+    border-color: #667eea;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+    transform: translateY(-2px);
+}
+
+.job-card-title {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.job-card-company {
+    color: #667eea;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.job-card-match {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.match-percentage {
+    font-weight: bold;
+    font-size: 16px;
+    color: #667eea;
+}
+
+.match-bar {
+    flex: 1;
+    height: 6px;
+    background: #e9ecef;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.match-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.job-card.excellent .match-fill {
+    background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.job-card.good .match-fill {
+    background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+.job-card.fair .match-fill {
+    background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+/* ==================== Buttons ==================== */
+
+.btn-primary, .btn-secondary, .btn-send {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    background: #e7e5ff;
+    color: #667eea;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: #d7d3ff;
+}
+
+.btn-secondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-send {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 30px;
+    min-width: 100px;
+}
+
+.btn-send:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-send:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ==================== Modal ==================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #333;
+}
+
+#modal-body h2 {
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+#modal-body h3 {
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+#modal-body p, #modal-body li {
+    margin: 8px 0;
+    line-height: 1.6;
+    color: #666;
+}
+
+#modal-body ul {
+    margin-left: 20px;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.skill-list .tag {
+    background: #e7e5ff;
+    color: #667eea;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* ==================== Loading Spinner ==================== */
+
+.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 5px solid #e9ecef;
+    border-top: 5px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 999;
+}
+
+.spinner.hidden {
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ==================== Responsive Design ==================== */
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .sidebar, .jobs-sidebar {
+        display: none;
+    }
+
+    .chat-input-area {
+        padding: 15px;
+    }
+
+    #chat-input {
+        font-size: 16px; /* Prevents zoom on mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .message-content {
+        max-width: 85%;
+    }
+
+    .chat-header h1 {
+        font-size: 20px;
+    }
+
+    .modal-content {
+        margin: 20px;
+        max-width: 90vw;
+    }
+}
+
+/* ==================== Utility Classes ==================== */
+
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
